@@ -1,0 +1,22 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+@include laptop {
+  .container {
+    max-width: 1024px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@include tablet {
+  .container {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+}
+@include mobile {
+  .container {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}

@@ -1,0 +1,116 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+@include laptop {
+  .header {
+    &__logo svg {
+      width: 166px;
+      height: 26px;
+    }
+    .nav {
+      &__item:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .header {
+    &__container {
+      padding-left: 26px;
+      padding-top: 28px;
+      padding-bottom: 22px;
+    }
+    &__menu {
+      justify-content: flex-end;
+      min-width: 10%;
+    }
+    &__nav {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background-color: $fromColor;
+      display: block;
+    }
+    .nav {
+      &__list {
+        margin: 0;
+        padding: 13px 30px;
+      }
+      &__item:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    &__container {
+      padding-left: 20px;
+      padding-top: 25px;
+    }
+    &__logo {
+      svg {
+        width: 112px;
+        height: 18px;
+      }
+    }
+    &__btn {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .nav {
+      top: 70px;
+      padding: 14px 21px;
+      padding-bottom: 7px;
+      &__burger {
+        display: block;
+      }
+      &__mobile {
+        height: 100vh;
+        z-index: 10000;
+        background-color: $darkBgColor;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      &__mobile--active {
+        display: block;
+      }
+      &__list {
+        padding-top: 55px;
+        padding-left: 21px;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 30px;
+      }
+      &__btn-close {
+        display: block;
+        position: absolute;
+        color: $navBtn;
+        top: 14px;
+        left: 21px;
+      }
+      &__tel {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 21px;
+        bottom: 106px;
+        color: $btnColor;
+        column-gap: 5px;
+      }
+    }
+    .form {
+      width: 100vw;
+      justify-content: flex-end;
+    }
+  }
+}

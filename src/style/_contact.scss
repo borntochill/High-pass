@@ -1,0 +1,129 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+.contact {
+  &__container {
+    padding-top: 34px;
+    padding-bottom: 69px;
+    overflow: hidden;
+  }
+  &__title {
+    margin-bottom: 24px;
+  }
+  &__grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-auto-rows: 460px;
+  }
+  &__left-block {
+    grid-column: span 2;
+    position: relative;
+    overflow: hidden;
+  }
+  &__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__content {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 48.2%;
+    background-color: rgba(32, 32, 32, 0.85);
+    transition: transform $effectsTime;
+    &-close {
+      transform: translateX(-120%);
+    }
+  }
+  &__text {
+    padding-top: 175px;
+    padding-left: 60px;
+    padding-right: 50px;
+  }
+  &__title-sm {
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 400;
+    font-family: $fontTitle;
+    color: $titleColorLight;
+    margin-bottom: 5px;
+  }
+  &__descr {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: $lightGrayColor;
+    margin-bottom: 2px;
+  }
+  &__tel {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: $btnColor;
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: $textLightColor;
+    @include effectSvg;
+  }
+}
+
+.application {
+  overflow: hidden;
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    color: $darkBgColor;
+    font-family: $fontTitle;
+    margin-bottom: 5px;
+  }
+  &__descr {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $textLightColor;
+    margin-bottom: 14px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+
+    &-input {
+      width: 100%;
+      padding: 16px 23px;
+      border: 1px solid transparent;
+      background-color: $bgForm;
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        color: $textLightColor;
+      }
+    }
+    &-comment {
+      resize: none;
+    }
+    &-btn {
+      @include btn;
+      background-color: $btnColor;
+      @include hoverBtn;
+    }
+  }
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}

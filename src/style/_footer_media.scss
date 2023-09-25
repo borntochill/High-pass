@@ -1,0 +1,65 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+@include laptop {
+  .footer {
+    &__container {
+      padding-top: 23px;
+      grid-template-columns: repeat(8, minmax(50px, 1fr));
+    }
+
+    &__logo {
+      padding-top: 6px;
+      grid-column: 1/4;
+      svg {
+        width: 166px;
+        height: 26px;
+      }
+    }
+    &__quote {
+      grid-column: 4/7;
+    }
+    &__social {
+      grid-column: 7/-1;
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    &__quote {
+      display: none;
+    }
+    &__container {
+      @include flex;
+      padding-bottom: 21px;
+    }
+  }
+}
+@include mobile {
+  .footer {
+    &__container {
+      flex-direction: column-reverse;
+      padding: 30px 0 0 0;
+      grid-gap: 0;
+    }
+    &__logo {
+      align-items: center;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      background-color: $fromColor;
+      width: 100%;
+      svg {
+        width: 112px;
+        height: 18px;
+      }
+      span {
+        font-size: 10px;
+      }
+    }
+
+    &__social {
+      padding-bottom: 30px;
+    }
+  }
+}

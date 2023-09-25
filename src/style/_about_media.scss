@@ -1,0 +1,65 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+@include laptop {
+  .about {
+    &__container {
+      padding-bottom: 81px;
+    }
+  }
+  .form {
+    &__block {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 21px;
+    }
+  }
+}
+
+@include tablet {
+  .about {
+    &__container {
+      padding-bottom: 64px;
+    }
+    .form {
+      &__input {
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .about {
+    &__container {
+      padding-bottom: 59px;
+    }
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 25px;
+    }
+    &__descr {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    &__item-2 {
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      font-size: $mobileFontSizeTitle;
+    }
+    .form {
+      &__descr {
+        font-size: $mobileFontSizeTitle;
+      }
+      &__input {
+        padding: 11px 23px;
+      }
+      &__btn {
+        @include btn-mobile;
+      }
+    }
+  }
+}

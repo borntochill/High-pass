@@ -1,0 +1,117 @@
+@import "_variables.scss";
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin sticker {
+  position: absolute;
+  background-color: $darkBgColor;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: $titleColorLight;
+}
+@mixin sticker-mobile {
+  font-size: 12px;
+  padding: 4px 7px;
+}
+
+@mixin titleMini {
+  font-family: $fontTitle;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin btn {
+  padding: 12px 19px;
+  color: $titleColorLight;
+  font-family: $fontRoboto;
+  font-size: 16px;
+  font-weight: 700;
+  border: 3px solid $btnColor;
+  transition: color $effectsTime, background-color $effectsTime,
+    border-color $effectsTime;
+}
+@mixin btn-mobile {
+  font-size: 14px;
+  padding: 9px 20px;
+}
+
+@mixin hoverBtnBorder {
+  &:hover {
+    background-color: $btnColor;
+  }
+  &:focus-visible {
+    background-color: $btnDarkOrange;
+  }
+  &:active {
+    background-color: $btnActiveColor;
+  }
+}
+
+@mixin hoverBtn {
+  &:hover {
+    background-color: $btnDarkOrange;
+    border-color: $btnDarkOrange;
+  }
+  &:focus-visible {
+    background-color: $btnColor;
+    border-color: $btnActiveColor;
+  }
+  &:active {
+    background-color: $btnActiveColor;
+    border-color: $btnActiveColor;
+  }
+}
+
+@mixin linkEffect {
+  padding-left: 3px;
+  padding-right: 3px;
+  transition: color $effectsTime, background-color $effectsTime;
+
+  &:hover {
+    color: $btnColor;
+  }
+  &:focus-visible {
+    background-color: $btnDarkOrange;
+    color: $titleColorLight;
+  }
+  &:active {
+    color: $btnActiveColor;
+  }
+}
+
+@mixin effectSvg {
+  & {
+    transition: color $effectsTime;
+  }
+  &:hover {
+    color: $btnColor;
+  }
+  &:focus-visible {
+    color: $btnDarkOrange;
+  }
+  &:active {
+    color: $btnActiveColor;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $breakpointLaptop) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $breakpointTablet) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: $breakpointMobile) {
+    @content;
+  }
+}

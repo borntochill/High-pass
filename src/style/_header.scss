@@ -1,0 +1,90 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+.header {
+  background-color: $darkBgColor;
+  &__container {
+    @include flex;
+    column-gap: 10px;
+    padding-top: 15px;
+    padding-bottom: 14px;
+  }
+  &__logo svg {
+    width: 190px;
+    height: 31px;
+  }
+  &__menu {
+    @include flex;
+    min-width: 74.5%;
+    column-gap: 10px;
+  }
+  .nav {
+    &__list {
+      @include flex;
+    }
+    &__item:not(:last-child) {
+      margin-right: 76px;
+    }
+    &__burger {
+      display: none;
+    }
+    &__link {
+      color: $titleColorLight;
+      @include linkEffect;
+      font-family: $fontTitle;
+      font-size: 16px;
+    }
+    &__btn-close,
+    &__tel {
+      display: none;
+    }
+  }
+  &__btn {
+    color: $titleColorLight;
+    @include effectSvg;
+  }
+
+  &__search {
+    position: relative;
+
+    .form {
+      padding-top: 0;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      padding: 10px 0 10px 5px;
+      background-color: $darkBgColor;
+      z-index: 1000;
+      right: 0;
+      top: 0;
+      transform: translateY(-135px);
+      transition: transform $effectsTime;
+
+      &__input {
+        border-bottom: 1px solid $bgForm;
+        padding: 0;
+        background-color: transparent;
+        width: 169px;
+        outline: 0;
+        transition: border-bottom $effectsTime;
+        &::placeholder {
+          color: $bgForm;
+          font-size: 14px;
+        }
+        &:hover {
+          border-bottom: 1px solid $btnColor;
+        }
+        &:active {
+          border-bottom: 1px solid $btnActiveColor;
+        }
+      }
+      &__btn-close {
+        color: $navBtn;
+        @include effectSvg;
+      }
+      &--active {
+        transform: translateY(-8px);
+      }
+    }
+  }
+}

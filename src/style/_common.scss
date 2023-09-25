@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Regular"),
+    url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff2") format("woff2"),
+    url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TTFirsNeue";
+  src: local("TTFirsNeue-Bold"),
+    url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"),
+    url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TTFirsNeue";
+  src: local("TTFirsNeue-Regular"),
+    url("../fonts/TTFirsNeue-Regular.woff2") format("woff2"),
+    url("../fonts/TTFirsNeue-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+img {
+  object-fit: cover;
+}
+
+.list__reset {
+  list-style: none;
+  padding: 0;
+}
+
+.link-reset {
+  text-decoration: none;
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+.title-reset,
+.descr-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1320px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
